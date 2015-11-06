@@ -1,9 +1,9 @@
-import {Component, ViewEncapsulation, TemplateRef} from 'angular2/angular2';
+import {Component, ViewEncapsulation} from 'angular2/angular2';
 import {
   RouteConfig,
   ROUTER_DIRECTIVES
 } from 'angular2/router';
-// import {HTTP_BINDINGS} from 'http/http';
+// import {HTTP_PROVIDERS} from 'http/http';
 
 import {HomePage} from '../home/home';
 import {FormPage} from '../form/form';
@@ -21,11 +21,11 @@ import {PanelsWellsPage} from '../panels-wells/panels-wells';
 
 @Component({
   selector: 'app',
-  viewBindings: [NameList],
+  viewProviders: [NameList],
   template: '<router-outlet></router-outlet>',
   styleUrls: ['./components/app/app.css'],
   encapsulation: ViewEncapsulation.None,
-  directives: [Header, ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
   { path: '/', redirectTo: '/home' },
@@ -43,5 +43,4 @@ import {PanelsWellsPage} from '../panels-wells/panels-wells';
   { path: '/grid', component: GridPage, as: 'Dashboard.grid' }
 ])
 export class App {
-  public headingTemplate:TemplateRef;
 }

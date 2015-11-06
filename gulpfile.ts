@@ -16,7 +16,6 @@ registerInjectableAssetsRef(PATH.src.jslib_inject, PATH.dest.dev.lib);
 // registerInjectableAssetsRef(['ng2-bootstrap.js'], PATH.dest.dev.lib);
 registerInjectableAssetsRef(PATH.src.csslib, PATH.dest.dev.css);
 
-
 // --------------
 // Clean (override).
 gulp.task('clean',       task('clean', 'all'));
@@ -30,7 +29,6 @@ gulp.task('postinstall', done =>
               'npm',
               done));
 
-
 // --------------
 // Build dev.
 gulp.task('build.dev', done =>
@@ -41,6 +39,7 @@ gulp.task('build.dev', done =>
               'build.sass.dev',
               'build.js.dev',
               'build.csslib.dev',
+              'build.assets',
               'build.fonts',
               'build.index.dev',
               done));
@@ -64,7 +63,6 @@ gulp.task('test', done =>
               'karma.start',
               done));
 
-
 // --------------
 // Serve.
 gulp.task('serve', done =>
@@ -73,7 +71,12 @@ gulp.task('serve', done =>
               'watch.serve',
               done));
 
-
+// --------------
+// Docs
+gulp.task('docs', done =>
+  runSequence('build.docs',
+              'serve.docs',
+              done));
 
 // --------------
 // Build prod.
