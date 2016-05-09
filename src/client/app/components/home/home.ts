@@ -1,14 +1,19 @@
 import {Component} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/common';
 import {WrapperCmp} from '../header/header';
-
+import {DataSource} from '../../shared/services/datasource.ts';
+import {Measurement} from '../../shared/services/measurement.ts';
 @Component({
   selector: 'timeline',
   templateUrl: 'app/components/home/timeline.html',
   styleUrls: ['app/components/home/timeline.css'],
-  directives: [CORE_DIRECTIVES]
+  directives: [CORE_DIRECTIVES],
+  providers: [DataSource]
 })
-class TimelineCmp {}
+class TimelineCmp {
+  measurement:Measurement[];
+
+}
 
 @Component({
   selector: 'notifications',

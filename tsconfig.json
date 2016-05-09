@@ -1,7 +1,7 @@
 {
     "version": "1.6.0",
     "compilerOptions": {
-        "target": "es5",
+        "target": "es6",
         "module": "commonjs",
         "declaration": false,
         "noImplicitAny": false,
@@ -15,8 +15,7 @@
         "node_modules",
         "dist",
         "typings/browser.d.ts",
-        "typings/browser",
-        "src"
+        "typings/browser"
     ],
     "compileOnSave": false
 }
