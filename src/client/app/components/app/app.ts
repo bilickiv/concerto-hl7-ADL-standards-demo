@@ -10,6 +10,10 @@ import {FormPage} from '../form/form';
 import {AuthPage} from '../auth/auth';
 import {ChartPage} from '../chart/chart';
 import {TablePage} from '../table/table';
+import {BloodPressurePage} from '../charts/bloodpressure/bloodpressure';
+import {BloodOxigenePage} from '../charts/bloodoxigene/bloodoxigene';
+import {HrvPage} from '../charts/hrv/hrv';
+import {WeightPage} from '../charts/weight/weight';
 import {ButtonsPage} from '../buttons/buttons';
 import {NotificationsPage} from '../notifications/notifications';
 import {TypographyPage} from '../typography/typography';
@@ -39,7 +43,11 @@ import {PanelsWellsPage} from '../panels-wells/panels-wells';
   { path: '/notifications', component: NotificationsPage, name: 'Dashboard.notifications' },
   { path: '/typography', component: TypographyPage, name: 'Dashboard.typography' },
   { path: '/icons', component: IconsPage, name: 'Dashboard.icons' },
-  { path: '/grid', component: GridPage, name: 'Dashboard.grid' }
+  { path: '/grid', component: GridPage, name: 'Dashboard.grid' },
+  { path: '/bloodpressure', component: BloodPressurePage, name: 'BloodPressurePage' },
+  { path: '/bloodoxigene', component: BloodOxigenePage, name: 'BloodOxigenePage' },
+  { path: '/hrv', component: HrvPage, name: 'HrvPage' },
+  { path: '/weight', component: WeightPage, name: 'WeightPage' }
 ])
 export class App {
 }
