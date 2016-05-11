@@ -1,7 +1,8 @@
 import {Component, OnInit, Input} from 'angular2/core';
 import {CORE_DIRECTIVES,FORM_DIRECTIVES, NgClass} from 'angular2/common';
 import {CHART_DIRECTIVES} from 'ng2-charts/ng2-charts';
-
+import {DataProvider} from '../../../shared/services/data_provider';
+import { HTTP_PROVIDERS } from 'angular2/http';
 
 @Component({
   selector: 'weightchart',
@@ -9,10 +10,12 @@ import {CHART_DIRECTIVES} from 'ng2-charts/ng2-charts';
   //styleUrls: ['app/components/charts/weight/weight-chart.css'],
   properties: ['lineChartData', 'lineChartLabels', 'lineChartSeries', 'lineChartOptions',
  'lineChartColours','lineChartLegend','lineChartType'],
-  directives: [CHART_DIRECTIVES, NgClass, CORE_DIRECTIVES, FORM_DIRECTIVES]
+  directives: [CHART_DIRECTIVES, NgClass, CORE_DIRECTIVES, FORM_DIRECTIVES],
+  providers:[DataProvider, HTTP_PROVIDERS ]
 })
 export class WeightChart {
-
+  errorMessage:string;
+d:DataProvider;
   // lineChart
    @Input() lineChartData:Array<any> = [];
   @Input() lineChartLabels:Array<any>  = [];
@@ -31,12 +34,14 @@ export class WeightChart {
   chartHovered(e:any) {
     console.log(e);
   }
-  constructor() {
-    this.lineChartData = [
+  constructor( d:DataProvider) {
+  this.lineChartData  = [
     [65, 59, 80, 81, 56, 55, 40],
     [28, 48, 40, 19, 86, 27, 90],
     [18, 48, 77, 9, 100, 27, 40]
   ];
+    this.d = d;
+    this.getBloodpressure();
     this.lineChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
     this.lineChartSeries = ['Series A', 'Series B', 'Series C'];
     // this.lineChartOptions = {
@@ -72,6 +77,17 @@ export class WeightChart {
      this.lineChartLegend = true;
      this.lineChartType = 'Line';
     console.log('line demo');
+  }
+  getBloodpressure() {
+    console.log('1----');
+  this.d.getBloodpressure()
+                 .subscribe(
+                   lineChartData => {
+                     console.log('Itt vagyunk');
+                     console.log(lineChartData);
+                     this.lineChartData = lineChartData;
+                   },
+                   error =>  this.errorMessage = <any>error);
   }
    randomize() {
      console.log(this.lineChartData);

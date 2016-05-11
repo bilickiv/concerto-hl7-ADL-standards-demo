@@ -3,7 +3,6 @@ import {
   RouteConfig,
   ROUTER_DIRECTIVES
 } from 'angular2/router';
-// import {HTTP_PROVIDERS} from 'http/http';
 
 import {HomePage} from '../home/home';
 import {FormPage} from '../form/form';
@@ -30,6 +29,7 @@ import {PanelsWellsPage} from '../panels-wells/panels-wells';
   styleUrls: ['app/components/app/app.css'],
   encapsulation: ViewEncapsulation.None,
   directives: [ROUTER_DIRECTIVES]
+
 })
 @RouteConfig([
   { path: '/', component: HomePage, name: 'Dashboard.home' },
