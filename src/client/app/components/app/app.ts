@@ -22,6 +22,7 @@ import {GridPage} from '../grid/grid';
 import {NameList} from '../../shared/index';
 import {PanelsWellsPage} from '../panels-wells/panels-wells';
 
+
 @Component({
   selector: 'app',
   viewProviders: [NameList],
@@ -44,6 +45,7 @@ import {PanelsWellsPage} from '../panels-wells/panels-wells';
   { path: '/typography', component: TypographyPage, name: 'Dashboard.typography' },
   { path: '/icons', component: IconsPage, name: 'Dashboard.icons' },
   { path: '/grid', component: GridPage, name: 'Dashboard.grid' },
+  { path: '/charts', component: BloodPressurePage, name: 'Chart.bloodpressure' },
   { path: '/bloodpressure', component: BloodPressurePage, name: 'BloodPressurePage' },
   { path: '/bloodoxigene', component: BloodOxigenePage, name: 'BloodOxigenePage' },
   { path: '/hrv', component: HrvPage, name: 'HrvPage' },
