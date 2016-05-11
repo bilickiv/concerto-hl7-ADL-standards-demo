@@ -1,6 +1,7 @@
 import {Component} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/common';
 import {WrapperCmp} from '../header/header';
+import {ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({
   selector: 'timeline',
@@ -27,14 +28,15 @@ class ChatCmp {}
 @Component({
   selector: 'stats',
   templateUrl: 'app/components/home/stats.html',
-  properties: ['number', 'comments', 'colour', 'type'],
-  directives: [CORE_DIRECTIVES]
+  properties: ['number', 'comments', 'colour', 'type','chart'],
+  directives: [CORE_DIRECTIVES,ROUTER_DIRECTIVES]
 })
 class StatsCmp {
   number:number;
   comments:string;
   colour:string;
   type:string;
+  chart: string;
 }
 
 @Component({
