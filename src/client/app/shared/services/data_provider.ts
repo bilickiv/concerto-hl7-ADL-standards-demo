@@ -11,7 +11,7 @@ export class DataProvider {
   [28, 48, 40, 19, 86, 27, 90],
   [18, 48, 77, 9, 100, 27, 40]
 ];
-  hapiUrl: string = "";
+  hapiUrl: string = '';
  p: URLSearchParams;
 
 
@@ -29,32 +29,31 @@ constructor ( http: Http) {
     return this.http.get(this.hapiUrl, {
                   search: this.p
                   }).map(this.extractData);
-                }
-  getBP(): Array<any> {
-    console.log('DataProvider');
-    return this.bloodpressuredata;
-  }
-  add(value: Array<any>): void {
-    this.bloodpressuredata.push(value);
   }
   private extractData(res: Response) {
-    console.log('PARSING');
+    let measurements: Array<any> = [];
+    console.log('PARSING -- 2');
     if (res.status < 200 || res.status >= 300) {
       throw new Error('Bad response status: ' + res.status);
-    }else{
+    } else {
       console.log(res.status);
-      console.log(res.json());
+      //console.log(res.json());
     }
-    console.log('PARSING');
-    let body = res.json();
-    for(var prop in res.json()) {
-        if(!res.json().hasOwnProperty(prop)) {
-            continue;
-        }
-        console.log(prop.toString());
+    console.log('PARSING --  3');
+    console.log(res.json());
+    let thisResource:any;
+    thisResource = res.json();
+    console.log('PARSING --  4');
+    console.log(thisResource.resourceType);
+    console.log(thisResource.id);
+    console.log(thisResource.entry);
+    for(var e of thisResource.entry)
+    {
+      console.log(e.resource);
+      measurements.push(e.resource)
     }
-    console.log('END');
-    console.log(body.data);
-    return body.data || { };
+    console.log('END PARSING --- 3');
+    return measurements;
   }
+
 }

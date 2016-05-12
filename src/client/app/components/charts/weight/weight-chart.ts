@@ -27,6 +27,10 @@ d:DataProvider;
   @Input() lineChartColours:Array<any>  = [];
    @Input() lineChartLegend:boolean = true;
    @Input() lineChartType:string = '';
+   systole:Array<number> = [];
+   diastole:Array<number> = [];
+   pulse:Array<number> = [];
+   labels:Array<string> = [];
   chartClicked(e:any) {
     console.log(e);
   }
@@ -43,7 +47,7 @@ d:DataProvider;
     this.d = d;
     this.getBloodpressure();
     this.lineChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-    this.lineChartSeries = ['Series A', 'Series B', 'Series C'];
+    this.lineChartSeries = ['Systole', 'Diastole', 'Pulse'];
     // this.lineChartOptions = {
     //   animation: false,
     //   responsive: true
@@ -85,23 +89,24 @@ d:DataProvider;
                    lineChartData => {
                      console.log('Itt vagyunk');
                      console.log(lineChartData);
-                     this.lineChartData = lineChartData;
+                     this.setBloodpressure(lineChartData);
                    },
                    error =>  this.errorMessage = <any>error);
   }
-   randomize() {
-     console.log(this.lineChartData);
-    let _lineChartData:Array<any> = [];
-    for (let i = 0; i < this.lineChartData.length; i++) {
-      _lineChartData[i] = [];
-      for (let j = 0; j < this.lineChartData[i].length; j++) {
-        _lineChartData[i].push(Math.floor((Math.random() * 100) + 1));
+  setBloodpressure(input:Array<any>) {
+    console.log('2');
 
-      }
+    for(var r of input)
+    {
+      console.log(r);
+      this.systole.push(r.component[0].valueQuantity.value);
+      this.diastole.push(r.component[1].valueQuantity.value);
+      this.pulse.push(r.component[2].valueQuantity.value);
+      this.labels.push(r.effectiveDateTime);
     }
-    this.lineChartData = _lineChartData;
-    console.log('done randomization');
-
+    this.lineChartData = [this.systole,this.diastole,this.pulse];
+    console.log(this.labels);
+    this.lineChartLabels = this.labels;
   }
   ngOnInit() {
         console.log('On INIT');
