@@ -50,7 +50,7 @@ constructor ( http: Http) {
     for(var e of thisResource.entry)
     {
       console.log(e.resource);
-      measurements.push(e.resource)
+      measurements.push(e.resource);
     }
     console.log('END PARSING --- 3');
     return measurements;
