@@ -1,0 +1,51 @@
+<div>
+    <div class="row">
+        <div class="col-lg-10">
+            <h1 class="page-header">Dashboard</h1>
+        </div>
+    </div>
+    <div class="row">
+        <patientinfo id={{vm.pID}} name="{{vm.pname}}" sex="{{vm.pSex}}" bdate="{{vm.pBDay}}" warning="true" on-warning="vm.showAlert()"></patientinfo>
+    </div>
+    <div class="row" ng-if="vm.alertList">
+        <alertlist alerts="vm.exampleAlerts"></alertlist>
+    </div>
+    <div class="row">
+        <stats goto="dashboard.bloodpressure" number="{{vm.dash.bloodpressure}}" comments="Blood Pressure" colour="red" subtype="mm[Hg]"
+               type="heart"></stats>
+        <stats goto="dashboard.plethysmo" number="{{vm.dash.plethysmo}}" comments="Pulse variabilty" colour="red" type="heartbeat"
+               subtype="bpm"></stats>
+        <stats goto="dashboard.bloodoxy" number="{{vm.dash.bloodoxy}}" comments="Oxygen Saturation" colour="red" subtype="%"
+               type="tint"></stats>
+        <stats goto="dashboard.weight" number="{{vm.dash.weight}}" comments="Weight" colour="primary" subtype="kg"
+               type="balance-scale"></stats>
+
+    </div>
+
+    <div class="row">
+        <stats goto="dashboard.alcohol" number="{{vm.dash.alcohol}}" comments="Alcohol" colour="green" type="beer"></stats>
+        <stats goto="dashboard.smoking" number="{{vm.dash.smoking}}" comments="Smoking" colour="green" type="times"></stats>
+        <stats goto="dashboard.coffeine" number="{{vm.dash.coffeine}}" comments="Coffein" colour="green" type="coffee"></stats>
+        <stats goto="dashboard.exercise" number="{{vm.dash.exercise}}" comments="Exercise" colour="green" type="male"></stats>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-clock-o fa-fw"></i> Latest Updates
+                </div>
+                <timeline></timeline>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> Map
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

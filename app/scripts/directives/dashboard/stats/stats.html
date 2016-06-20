@@ -1,0 +1,25 @@
+<div class="col-lg-3 col-md-6">
+    <div class="panel panel-{{colour}}">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-3">
+                    <i class="fa fa-{{type}} fa-5x"></i>
+                </div>
+                <div class="col-xs-9 text-right">
+                    <div style="font-size: larger">{{comments}}</div>
+                    <div class="col-xs-4 col-xs-offset-2" style="padding: 2px;">
+                        <div class="huge" align="center">{{number}}</div>
+                        <div style="font-size: small" align="center">{{subtype}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a ui-sref="{{goto}}">
+            <div class="panel-footer">
+                <span class="pull-left" style="font-size: large">View Details</span>
+                <span class="pull-right" style="font-size: large"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="clearfix"></div>
+            </div>
+        </a>
+    </div>
+</div>

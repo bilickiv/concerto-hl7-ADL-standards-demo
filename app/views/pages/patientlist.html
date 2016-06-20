@@ -1,0 +1,38 @@
+<div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Patient List</h1>
+        </div>
+    </div>
+    <div class="panel col-lg-offset-2 col-lg-8" style="background-color: #78C7FF; margin-bottom: 0"
+         ng-click="vm.clickHipertonia()">
+        <div class="panel-heading">
+            <div style="font-size: large">Hipertonia</div>
+        </div>
+    </div>
+    <div class="row col-lg-offset-3 col-lg-6">
+        <div ng-repeat="patient in vm.patients" ng-if="vm.hipertonia">
+            <div ng-style="$index%2==0 ? {'background-color': '#D5EDFE'} : {'background-color': '#B1DFFF'}">
+                <div class="row">
+                    <div class="panel-heading" style="margin: auto">
+                        <div class="col-lg-11" ng-click="vm.patientClick(patient)">
+                            <div class="col-xs-2">{{patient.resource.id}}</div>
+                            <div class="col-xs-2">{{patient.resource.name[0].family[0]}}
+                                {{patient.resource.name[0].given[0]}}
+                            </div>
+                            <div class="col-xs-2">{{patient.resource.birthDate.slice(0,10)}}</div>
+                            <div class="col-xs-2">{{ }}</div>
+                            <div class="col-xs-2">{{ }}</div>
+                        </div>
+                        <div class="col-lg-1" ng-click="vm.settingClick(patient)">
+                            <div class="col-xs-2"
+                                 style="cursor: pointer; font-size: large; padding: auto" align="center"><i
+                                    class="fa fa-cog fa-fw"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

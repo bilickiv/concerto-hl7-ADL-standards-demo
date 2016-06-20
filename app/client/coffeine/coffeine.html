@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-lg-10">
+        <h1 class="page-header">Coffeine Uploads</h1>
+    </div>
+    <div class="col-lg-2">
+        <button class="btn btn-default page-header" ui-sref="dashboard.home">Back</button>
+    </div>
+
+</div>
+
+<section>
+    <div ui-view>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header pull-left" style="margin-top: 1%;">
+                    <button type="button" class="navbar-btn" ng-click="vm.setFilter('day')"
+                            ng-class="{'selected-button' : vm.isFilter('day')}">Day
+                    </button>
+                    <button type="button" class="navbar-btn" ng-click="vm.setFilter('week')"
+                            ng-class="{'selected-button' : vm.isFilter('week')}">Week
+                    </button>
+                    <button type="button" class="navbar-btn" ng-click="vm.setFilter('month')"
+                            ng-class="{'selected-button' : vm.isFilter('month')}">Month
+                    </button>
+                    <button type="button" class="navbar-btn" ng-click="vm.setFilter('year')"
+                            ng-class="{'selected-button' : vm.isFilter('year')}">Year
+                    </button>
+                    <button type="button" class="navbar-btn" ng-click="vm.setFilter('all')"
+                            ng-class="{'selected-button' : vm.isFilter('all')}">All
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div class="row" style="margin: 2%">
+            <div class="col-lg-12">
+                <p class="page-header">[1 => Never or <1/month, 2 => 1-3/month, 3 => 1/week, 4 => 2-4/week, 5 => 5-6/week, 6 => 1/day, 7 => 2-3/day, 8 => 4-5/day, 9 => >=6/day]</p>
+            </div>
+            <div google-chart chart="vm.lifestyleChart" class="col-lg-12" style="height:300px;"></div>
+        </div>
+    </div>
+</section>

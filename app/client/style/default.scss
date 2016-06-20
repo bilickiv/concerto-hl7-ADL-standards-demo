@@ -1,0 +1,13 @@
+$warning-color: red;
+
+.form-group.required {
+  label:after {
+    content: "*";
+    color: $warning-color;
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
+}

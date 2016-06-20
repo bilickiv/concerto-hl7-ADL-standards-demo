@@ -1,0 +1,199 @@
+<div class="no-animate">
+    <div class="row">
+        <div>
+            <h2>Define Therapy plan:</h2>
+            <div class="panel-body">
+                <form name="settingForm" novalidate>
+                    <fieldset>
+                        <div>
+                            <div class="form-group">
+                                <md-datepicker ng-model="vm.endDate" md-placeholder="Therapy End" style="width: 50%" required></md-datepicker>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h5>BloodPressure:</h5>
+                                        </div>
+                                        <div style="padding: 2%">
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Systolic Goal" name="systolic"
+                                                       type="number" ng-model="vm.bpressure.sys.goal" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Systolic Minimum"
+                                                       name="systolic_min"
+                                                       type="number" ng-model="vm.bpressure.sys.min" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Systolic Maximum"
+                                                       name="systolic_max"
+                                                       type="number" ng-model="vm.bpressure.sys.max" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Diastolic Goal"
+                                                       name="diastolic"
+                                                       type="number"
+                                                       ng-model="vm.bpressure.dias.goal" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Diastolic Minimum"
+                                                       name="diastolic_min"
+                                                       type="number" ng-model="vm.bpressure.dias.min" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Diastolic Maximum"
+                                                       name="diastolic_max"
+                                                       type="number" ng-model="vm.bpressure.dias.max" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Tolerance %" name="bp_tol"
+                                                       type="number" ng-model="vm.bpressure.dias.tolerance" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h5>Pulse variabilty:</h5>
+                                        </div>
+                                        <div style="padding: 2%">
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Pulse Goal"
+                                                       name="plethysmo" type="number"
+                                                       ng-model="vm.plethysmo.goal" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Pulse Minimum"
+                                                       name="plethysmomin" type="number"
+                                                       ng-model="vm.plethysmo.min" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Pulse Maximum"
+                                                       name="plethysmomax" type="number"
+                                                       ng-model="vm.plethysmo.max" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Tolerance %"
+                                                       name="plethysmotol" type="number"
+                                                       ng-model="vm.plethysmo.tolerance" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h5>LifeStyle:</h5>
+                                        </div>
+                                        <div style="padding: 2%">
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Movement Goal"
+                                                       name="move"
+                                                       type="number"
+                                                       ng-model="vm.movement.goal" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Movement Minimum"
+                                                       name="movemin"
+                                                       type="number"
+                                                       ng-model="vm.movement.min" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Movement Maximum"
+                                                       name="movemax"
+                                                       type="number"
+                                                       ng-model="vm.movement.max" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Movement Tolerance"
+                                                       name="movetol"
+                                                       type="number"
+                                                       ng-model="vm.movement.tolerance" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h5>BloodOxygen:</h5>
+                                        </div>
+                                        <div style="padding: 2%">
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Saturation Goal"
+                                                       name="bloodoxy"
+                                                       type="number"
+                                                       ng-model="vm.bloodoxy.goal" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Saturation Minimum"
+                                                       name="bloodoxymin"
+                                                       type="number"
+                                                       ng-model="vm.bloodoxy.min" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Saturation Maximum"
+                                                       name="bloodoxymax"
+                                                       type="number"
+                                                       ng-model="vm.bloodoxy.max" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Tolerance %"
+                                                       name="bloodoxytol"
+                                                       type="number"
+                                                       ng-model="vm.bloodoxy.tolerance" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h5>Weight:</h5>
+                                        </div>
+                                        <div style="padding: 2%">
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Weight Goal"
+                                                       name="weight"
+                                                       type="number"
+                                                       ng-model="vm.weight.goal" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Weight Minimum"
+                                                       name="weightmin"
+                                                       type="number"
+                                                       ng-model="vm.weight.min" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Weight Maximum"
+                                                       name="weightmax"
+                                                       type="number"
+                                                       ng-model="vm.weight.max" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control" placeholder="Tolerance %"
+                                                       name="weighttol"
+                                                       type="number"
+                                                       ng-model="vm.weight.tolerance" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input ng-click="vm.changeSettings()" ng-disabled="settingForm.$invalid"
+                               type="submit"
+                               class="btn btn-lg btn-success btn-block">
+                        <input ng-click="vm.deleteTherapy()" ng-disabled="!vm.alreadyExists" class="btn btn-lg btn-danger btn-block" value="Delete">
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Plethysmograph Measurement</h1>
+    </div>
+</div>
+
+<section>
+    <div ui-view>
+        <div class="col-md-4">
+            <div>
+                <p>Patient: {{vm.patient.name[0].family[0]}}, {{vm.patient.name[0].given[0]}}</p>
+            </div>
+            <div>
+                <p>Gender: {{vm.patient.gender}}</p>
+            </div>
+            <div>
+                <p>Birthdate: {{vm.patient.birthDate}}</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div>
+                <p>Date : {{vm.record.effectiveDateTime}}</p>
+            </div>
+            <div>
+                <p>Tag : {{vm.record.code.coding[1].code}}</p>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div style="margin: 2%">
+                <div google-chart chart="vm.pulseWave" style="height:500px; width:100%;"></div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-default" ui-sref="dashboard.plethysmo">Back</button>
+</section>

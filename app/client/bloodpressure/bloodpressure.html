@@ -1,0 +1,41 @@
+
+<div class="row">
+    <div class="col-lg-10">
+        <h1 class="page-header">Blood Pressure Uploads</h1>
+    </div>
+    <div class="col-lg-2">
+        <button class="btn btn-default page-header" ui-sref="dashboard.home">Back</button>
+    </div>
+</div>
+
+<section>
+    <div ui-view>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header pull-left" style="margin-top: 1%;">
+                    <button type="button" class="navbar-btn" ng-click="vm.setFilter('day')"
+                            ng-class="{'selected-button' : vm.isFilter('day')}">Day
+                    </button>
+                    <button type="button" class="navbar-btn" ng-click="vm.setFilter('week')"
+                            ng-class="{'selected-button' : vm.isFilter('week')}">Week
+                    </button>
+                    <button type="button" class="navbar-btn" ng-click="vm.setFilter('month')"
+                            ng-class="{'selected-button' : vm.isFilter('month')}">Month
+                    </button>
+                    <button type="button" class="navbar-btn" ng-click="vm.setFilter('year')"
+                            ng-class="{'selected-button' : vm.isFilter('year')}">Year
+                    </button>
+                    <button type="button" class="navbar-btn" ng-click="vm.setFilter('all')"
+                            ng-class="{'selected-button' : vm.isFilter('all')}">All
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div style="margin: 2%">
+            <div google-chart chart="vm.bloodpressureChart" style="height:300px; width:100%;"></div>
+        </div>
+        <div style="margin: 2%">
+            <div google-chart chart="vm.bloodpressurePulseChart" style="height:300px; width:100%;"></div>
+        </div>
+    </div>
+</section>

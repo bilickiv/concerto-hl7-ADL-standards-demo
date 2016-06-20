@@ -1,0 +1,53 @@
+.form-group.required label:after {
+  content: "*";
+  color: red;
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+body {
+  background-color: #FAFEFE;
+  color: #000000;
+}
+
+.navbar-default {
+  background-color: #FFFFFF;
+}
+
+.panel {
+  background-color: #E4E6EA;
+}
+
+.panel-default .panel-heading {
+  background-color: #FFFFFF;
+  color: #8dc63f;
+  border: hidden;
+  border-radius: 5px;
+}
+
+.widget-heading {
+  background-color: #FFFFFF;
+}
+
+.well  {
+  background-color: #FFFFFF;
+}
+
+.panel {
+  border-color: #0B0B16;
+}
+
+.correctvalue {
+  color: black;
+}
+
+.selected-button {
+  background-color: #C3CDE4;
+}
+
+.badvalue {
+  color: red;
+}
